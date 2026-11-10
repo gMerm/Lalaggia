@@ -375,16 +375,17 @@ tbody:first-of-type .pair-group th { padding-top: .25rem; }
 .call-frame-num { font: 700 clamp(2.1rem, 3.6vw, 2.9rem)/1 var(--serif); font-variant-numeric: lining-nums; white-space: nowrap; }
 
 .clients-title { margin: clamp(1.5rem, 3vw, 2.25rem) 0 .6rem; font: 600 1rem/1.3 var(--sans); color: var(--gold-light); }
-.clients { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid rgba(255, 255, 255, .14); }
-.clients li { padding: .7rem 1.1rem 0; font-size: .98rem; line-height: 1.4; }
-.clients li:first-child { padding-left: 0; }
-.clients li + li { border-left: 1px solid rgba(255, 255, 255, .14); }
+.clients { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid rgba(255, 255, 255, .14); }
+.clients li { padding: .6rem 1.1rem; font-size: .98rem; line-height: 1.4; }
+.clients li:nth-child(3n + 1) { padding-left: 0; }
+.clients li:not(:nth-child(3n + 1)) { border-left: 1px solid rgba(255, 255, 255, .14); }
+.clients li:nth-child(n + 4) { border-top: 1px solid rgba(255, 255, 255, .14); }
 @media (max-width: 760px) {
   .product { grid-template-columns: 1fr; }
   .product-figure { max-width: 14rem; }
   .clients { grid-template-columns: 1fr; }
-  .clients li, .clients li:first-child { padding: .5rem 0; }
-  .clients li + li { border-left: 0; border-top: 1px solid rgba(255, 255, 255, .14); }
+  .clients li, .clients li:nth-child(n) { padding: .5rem 0; border-left: 0; }
+  .clients li + li { border-top: 1px solid rgba(255, 255, 255, .14); }
 }
 @media (max-width: 520px) { .spec div { grid-template-columns: 1fr; gap: 0; } }
 
